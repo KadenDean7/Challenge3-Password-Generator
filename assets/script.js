@@ -1,7 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate"); 
 //var for each of the prompts
-var passwordLen = 8;
+var userLen = 8;
 var includeUpper = true;
 var includeLower = true;
 var includeNum = true;
@@ -18,10 +18,10 @@ function writePassword() {
 
   function passwordPrompts(){
     //prompts to get password generation specifics
-    passwordLen = prompt("Choose password length between 8 and 128.");
+    userLen = parseInt(prompt("Choose password length between 8 and 128."));
     //while loop for invalid password length number
-    while(passwordLen < 8 || passwordLen > 128){
-      passwordLen = prompt("ERROR!! Choose password length between 8 and 128.")
+    while(userLen < 8 || userLen > 128){
+      userLen = prompt("ERROR!! Choose password length between 8 and 128.")
     }
     includeUpper = confirm("Include uppercase letters? (yes/no)");
     includeLower = confirm("Include lowercase letters? (yes/no)");
@@ -30,11 +30,6 @@ function writePassword() {
     }
 
     passwordPrompts();
-
-    console.log(includeLower);
-    console.log(includeNum);
-    console.log(includeSpecChar);
-    console.log(includeUpper);
 
   //password generation logic
   function generatePassword(){
@@ -86,7 +81,18 @@ function writePassword() {
 
     }
 
+    console.log(userChoices)
+    console.log(userLen);
+    console.log(typeof userLen);
+    
     //password randomization
+
+    for (var i = 0; i < userLen; i++){
+      var passwordArray = userChoices[Math.floor(Math.random() * userChoices.length)]; 
+    }
+
+    console.log(typeof userChoices);
+    console.log(typeof passwordArray);
 
   }
 
