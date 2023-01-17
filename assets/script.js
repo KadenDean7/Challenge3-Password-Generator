@@ -1,12 +1,14 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate"); 
 //var for each of the prompts
-var userLen = 8;
+var userLen;
 var includeUpper = true;
 var includeLower = true;
 var includeNum = true;
 var includeSpecChar = true;
 var userChoices;
+//empty array for password generation
+var passwordArray = [];
 //specifics of passwords in string
 var upperCaseLetter = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var lowerCaseLetter = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -81,22 +83,16 @@ function writePassword() {
 
     }
 
-    console.log(userChoices)
-    console.log(userLen);
-    console.log(typeof userLen);
-    
     //password randomization
 
     for (var i = 0; i < userLen; i++){
-      var passwordArray = userChoices[Math.floor(Math.random() * userChoices.length)]; 
+      var passwordRand = userChoices[Math.floor(Math.random() * userChoices.length)]; 
+      passwordArray.push(passwordRand);
     }
 
-    console.log(typeof userChoices);
-    console.log(typeof passwordArray);
-
   }
-
   var password = generatePassword();
+  var password = passwordArray.join('');
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
