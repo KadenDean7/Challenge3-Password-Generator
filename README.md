@@ -6,3 +6,4 @@ and if they want numbers and special characters in their password. And displays 
 generated password based on their inputs.
 
 ## Link
+Link to the website: https://kadendean7.github.io/Challenge3-Password-Generator/
